@@ -9,11 +9,20 @@
   <h1>Missed Prayer Counter</h1>
 
   <div id="prayer-counter">
-    <span id="subuh">Subuh: 0</span>
-    <span id="zohor">Zohor: 0</span>
-    <span id="asar">Asar: 0</span>
-    <span id="maghreb">Maghreb: 0</span>
-    <span id="isyak">Isyak: 0</span>
+    <span>Subuh: </span>
+    <span id="subuh">0</span>
+    <br>
+    <span>Zohor: </span>
+    <span id="zohor">0</span>
+    <br>
+    <span>Asar: </span>
+    <span id="asar">0</span>
+    <br>
+    <span>Maghreb: </span>
+    <span id="maghreb">0</span>
+    <br>
+    <span>Isyak: </span>
+    <span id="isyak">0</span>
   </div>
 
   <button type="button" onclick="incrementSubuh()">Missed Subuh</button>
@@ -22,11 +31,11 @@
   <button type="button" onclick="incrementMaghreb()">Missed Maghreb</button>
   <button type="button" onclick="incrementIsyak()">Missed Isyak</button>
   <br>
-  <button type="button" onclick="decrementSubuh()">Solat Subuh</button>
-  <button type="button" onclick="decrementZohor()">Solat Zohor</button>
-  <button type="button" onclick="decrementAsar()">Solat Asar</button>
-  <button type="button" onclick="decrementMaghreb()">Solat Maghreb</button>
-  <button type="button" onclick="decrementIsyak()">Solat Isyak</button>
+  <button type="button" onclick="decrementSubuh()">Qada Subuh</button>
+  <button type="button" onclick="decrementZohor()">Qada Zohor</button>
+  <button type="button" onclick="decrementAsar()">Qada Asar</button>
+  <button type="button" onclick="decrementMaghreb()">Qada Maghreb</button>
+  <button type="button" onclick="decrementIsyak()">Qada Isyak</button>
 
   <script>
     function incrementSubuh() {
