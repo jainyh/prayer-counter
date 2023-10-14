@@ -4,38 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Missed Prayer Counter</title>
+  <style>
+    /* Add some basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    h1 {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    #prayer-counter {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    .prayer-time {
+      flex-basis: 45%;
+      text-align: center;
+      margin: 5px;
+    }
+    .counter-button {
+      margin: 5px;
+    }
+  </style>
 </head>
 <body>
   <h1>Missed Prayer Counter</h1>
 
   <div id="prayer-counter">
-    <span>Subuh: </span>
-    <span id="subuh">0</span>
-    <br>
-    <span>Zohor: </span>
-    <span id="zohor">0</span>
-    <br>
-    <span>Asar: </span>
-    <span id="asar">0</span>
-    <br>
-    <span>Maghreb: </span>
-    <span id="maghreb">0</span>
-    <br>
-    <span>Isyak: </span>
-    <span id="isyak">0</span>
+    <div class="prayer-time">
+      <span>Subuh: </span>
+      <span id="subuh">0</span>
+    </div>
+    <div class="prayer-time">
+      <span>Zohor: </span>
+      <span id="zohor">0</span>
+    </div>
+    <div class="prayer-time">
+      <span>Asar: </span>
+      <span id="asar">0</span>
+    </div>
+    <div class="prayer-time">
+      <span>Maghreb: </span>
+      <span id="maghreb">0</span>
+    </div>
+    <div class="prayer-time">
+      <span>Isyak: </span>
+      <span id="isyak">0</span>
+    </div>
   </div>
 
-  <button type="button" onclick="incrementCounter('subuh')">Missed Subuh</button>
-  <button type="button" onclick="incrementCounter('zohor')">Missed Zohor</button>
-  <button type="button" onclick="incrementCounter('asar')">Missed Asar</button>
-  <button type="button" onclick="incrementCounter('maghreb')">Missed Maghreb</button>
-  <button type="button" onclick="incrementCounter('isyak')">Missed Isyak</button>
+  <button class="counter-button" onclick="incrementCounter('subuh')">Missed Subuh</button>
+  <button class="counter-button" onclick="incrementCounter('zohor')">Missed Zohor</button>
+  <button class="counter-button" onclick="incrementCounter('asar')">Missed Asar</button>
+  <button class="counter-button" onclick="incrementCounter('maghreb')">Missed Maghreb</button>
+  <button class="counter-button" onclick="incrementCounter('isyak')">Missed Isyak</button>
   <br>
-  <button type="button" onclick="decrementCounter('subuh')">Qada Subuh</button>
-  <button type="button" onclick="decrementCounter('zohor')">Qada Zohor</button>
-  <button type="button" onclick="decrementCounter('asar')">Qada Asar</button>
-  <button type="button" onclick="decrementCounter('maghreb')">Qada Maghreb</button>
-  <button type="button" onclick="decrementCounter('isyak')">Qada Isyak</button>
+  <button class="counter-button" onclick="decrementCounter('subuh')">Qada Subuh</button>
+  <button class="counter-button" onclick="decrementCounter('zohor')">Qada Zohor</button>
+  <button class="counter-button" onclick="decrementCounter('asar')">Qada Asar</button>
+  <button class="counter-button" onclick="decrementCounter('maghreb')">Qada Maghreb</button>
+  <button class="counter-button" onclick="decrementCounter('isyak')">Qada Isyak</button>
 
   <script>
     // Function to increment a counter
