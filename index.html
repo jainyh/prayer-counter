@@ -25,67 +25,50 @@
     <span id="isyak">0</span>
   </div>
 
-  <button type="button" onclick="incrementSubuh()">Missed Subuh</button>
-  <button type="button" onclick="incrementZohor()">Missed Zohor</button>
-  <button type="button" onclick="incrementAsar()">Missed Asar</button>
-  <button type="button" onclick="incrementMaghreb()">Missed Maghreb</button>
-  <button type="button" onclick="incrementIsyak()">Missed Isyak</button>
+  <button type="button" onclick="incrementCounter('subuh')">Missed Subuh</button>
+  <button type="button" onclick="incrementCounter('zohor')">Missed Zohor</button>
+  <button type="button" onclick="incrementCounter('asar')">Missed Asar</button>
+  <button type="button" onclick="incrementCounter('maghreb')">Missed Maghreb</button>
+  <button type="button" onclick="incrementCounter('isyak')">Missed Isyak</button>
   <br>
-  <button type="button" onclick="decrementSubuh()">Qada Subuh</button>
-  <button type="button" onclick="decrementZohor()">Qada Zohor</button>
-  <button type="button" onclick="decrementAsar()">Qada Asar</button>
-  <button type="button" onclick="decrementMaghreb()">Qada Maghreb</button>
-  <button type="button" onclick="decrementIsyak()">Qada Isyak</button>
+  <button type="button" onclick="decrementCounter('subuh')">Qada Subuh</button>
+  <button type="button" onclick="decrementCounter('zohor')">Qada Zohor</button>
+  <button type="button" onclick="decrementCounter('asar')">Qada Asar</button>
+  <button type="button" onclick="decrementCounter('maghreb')">Qada Maghreb</button>
+  <button type="button" onclick="decrementCounter('isyak')">Qada Isyak</button>
 
   <script>
-    function incrementSubuh() {
-      var subuh = document.getElementById("subuh");
-      subuh.innerHTML++;
+    // Function to increment a counter
+    function incrementCounter(prayer) {
+      var counter = document.getElementById(prayer);
+      counter.innerHTML++;
+      // Store the updated counter value in localStorage
+      localStorage.setItem(prayer, counter.innerHTML);
     }
 
-    function incrementZohor() {
-      var zohor = document.getElementById("zohor");
-      zohor.innerHTML++;
+    // Function to decrement a counter
+    function decrementCounter(prayer) {
+      var counter = document.getElementById(prayer);
+      if (counter.innerHTML > 0) {
+        counter.innerHTML--;
+        // Store the updated counter value in localStorage
+        localStorage.setItem(prayer, counter.innerHTML);
+      }
     }
 
-    function incrementAsar() {
-      var asar = document.getElementById("asar");
-      asar.innerHTML++;
+    // Initialize counters from localStorage on page load
+    function initializeCounters() {
+      const prayers = ['subuh', 'zohor', 'asar', 'maghreb', 'isyak'];
+      prayers.forEach(prayer => {
+        const value = localStorage.getItem(prayer);
+        if (value !== null) {
+          document.getElementById(prayer).innerHTML = value;
+        }
+      });
     }
 
-    function incrementMaghreb() {
-      var maghreb = document.getElementById("maghreb");
-      maghreb.innerHTML++;
-    }
-
-    function incrementIsyak() {
-      var isyak = document.getElementById("isyak");
-      isyak.innerHTML++;
-    }
-    function decrementSubuh() {
-      var subuh = document.getElementById("subuh");
-      subuh.innerHTML--;
-    }
-
-    function decrementZohor() {
-      var zohor = document.getElementById("zohor");
-      zohor.innerHTML--;
-    }
-
-    function decrementAsar() {
-      var asar = document.getElementById("asar");
-      asar.innerHTML--;
-    }
-
-    function decrementMaghreb() {
-      var maghreb = document.getElementById("maghreb");
-      maghreb.innerHTML--;
-    }
-
-    function decrementIsyak() {
-      var isyak = document.getElementById("isyak");
-      isyak.innerHTML--;
-    }
+    // Call the initialization function when the page loads
+    window.addEventListener('load', initializeCounters);
   </script>
 </body>
 </html>
