@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Missed Prayer Counter</title>
+</head>
+<body>
+  <h1>Prayer Counter</h1>
+
+  <div id="prayer-counter">
+    <span id="subuh">0</span>
+    <span id="zohor">0</span>
+    <span id="asar">0</span>
+    <span id="maghreb">0</span>
+    <span id="isyak">0</span>
+  </div>
+
+  <button type="button" onclick="incrementSubuh()">Missed Subuh</button>
+  <button type="button" onclick="incrementZohor()">Missed Zohor</button>
+  <button type="button" onclick="incrementAsar()">Missed Asar</button>
+  <button type="button" onclick="incrementMaghreb()">Missed Maghreb</button>
+  <button type="button" onclick="incrementIsyak()">Missed Isyak</button>
+  <br>
+  <button type="button" onclick="decrementSubuh()">Solat Subuh</button>
+  <button type="button" onclick="decrementZohor()">Solat Zohor</button>
+  <button type="button" onclick="decrementAsar()">Solat Asar</button>
+  <button type="button" onclick="decrementMaghreb()">Solat Maghreb</button>
+  <button type="button" onclick="decrementIsyak()">Solat Isyak</button>
+
+  <script>
+    function incrementSubuh() {
+      var subuh = document.getElementById("subuh");
+      subuh.innerHTML++;
+    }
+
+    function incrementZohor() {
+      var zohor = document.getElementById("zohor");
+      zohor.innerHTML++;
+    }
+
+    function incrementAsar() {
+      var asar = document.getElementById("asar");
+      asar.innerHTML++;
+    }
+
+    function incrementMaghreb() {
+      var maghreb = document.getElementById("maghreb");
+      maghreb.innerHTML++;
+    }
+
+    function incrementIsyak() {
+      var isyak = document.getElementById("isyak");
+      isyak.innerHTML++;
+    }
+    function decrementSubuh() {
+      var subuh = document.getElementById("subuh");
+      subuh.innerHTML--;
+    }
+
+    function decrementZohor() {
+      var zohor = document.getElementById("zohor");
+      zohor.innerHTML--;
+    }
+
+    function decrementAsar() {
+      var asar = document.getElementById("asar");
+      asar.innerHTML--;
+    }
+
+    function decrementMaghreb() {
+      var maghreb = document.getElementById("maghreb");
+      maghreb.innerHTML--;
+    }
+
+    function decrementIsyak() {
+      var isyak = document.getElementById("isyak");
+      isyak.innerHTML--;
+    }
+  </script>
+</body>
+</html>
