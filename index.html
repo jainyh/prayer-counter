@@ -76,6 +76,9 @@
   <button class="counter-button" onclick="decrementCounter('asar')">Qada Asar</button>
   <button class="counter-button" onclick="decrementCounter('maghreb')">Qada Maghreb</button>
   <button class="counter-button" onclick="decrementCounter('isyak')">Qada Isyak</button>
+  <br>
+  <div>Activity Log</div>
+  <ul id="activity-log"></ul>
 
   <script>
     // Function to increment a counter
@@ -109,6 +112,40 @@
 
     // Call the initialization function when the page loads
     window.addEventListener('load', initializeCounters);
+
+      // Function to increment a counter and update the activity log
+    function incrementCounter(prayer) {
+      var counter = document.getElementById(prayer);
+      counter.innerHTML++;
+      // Store the updated counter value in localStorage
+      localStorage.setItem(prayer, counter.innerHTML);
+      // Update the activity log
+      updateActivityLog('Missed ' + prayer);
+    }
+
+    // Function to decrement a counter and update the activity log
+    function decrementCounter(prayer) {
+      var counter = document.getElementById(prayer);
+      if (counter.innerHTML > 0) {
+        counter.innerHTML--;
+        // Store the updated counter value in localStorage
+        localStorage.setItem(prayer, counter.innerHTML);
+        // Update the activity log
+        updateActivityLog('Qada ' + prayer);
+      }
+    }
+
+    // Function to update the activity log
+    function updateActivityLog(activity) {
+      var log = document.getElementById('activity-log');
+      // Create a new list item
+      var newItem = document.createElement('li');
+      // Set the text of the list item
+      newItem.textContent = new Date().toLocaleString() + ': ' + activity;
+      // Add the list item to the top of the list
+      log.insertBefore(newItem, log.firstChild);
+    }
+
   </script>
 </body>
 </html>
